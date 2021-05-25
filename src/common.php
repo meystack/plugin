@@ -7,7 +7,7 @@ declare(strict_types = 1);
 // +----------------------------------------------------------------------
 // | swiftAdmin.net High Speed Development Framework
 // +----------------------------------------------------------------------
-// | Author: 权栈 <coolsec@foxmail.com>，河北赢图网络科技版权所有
+// | Author: 权栈 <coolsec@foxmail.com> MIT License Code
 // +----------------------------------------------------------------------
 
 use think\helper\Str;
@@ -19,7 +19,7 @@ spl_autoload_register(function ($class) {
 
     $class = ltrim($class, '\\');
     $dir = app()->getRootPath();
-    // 去除常量
+    // 去除常量 
     $namespace = 'plugin';
     if (strpos($class, $namespace) === 0) {
         $path = null;
@@ -332,6 +332,7 @@ if (!function_exists('copydirs')) {
             if ($item->isDir()) {
                 $sontDir = $dest . DIRECTORY_SEPARATOR . $iterator->getSubPathName();
                 if (!is_dir($sontDir)) {
+                    // 新建文件夹
                     mkdir($sontDir, 0755, true);
                 }
             } else {

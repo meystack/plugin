@@ -7,7 +7,7 @@ declare(strict_types = 1);
 // +----------------------------------------------------------------------
 // | swiftAdmin.NET High Speed Development Framework
 // +----------------------------------------------------------------------
-// | Author: 权栈 <coolsec@foxmail.com>，河北赢图网络科技版权所有
+// | Author: 权栈 <coolsec@foxmail.com> MIT License Code
 // +----------------------------------------------------------------------
 namespace think\plugin;
 use think\facade\View;

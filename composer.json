@@ -3,7 +3,7 @@
     "description": "this plug-in system for PHP",
     "homepage": "https://github.com/meystack/plugin",
     "license": "MIT",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "authors": [
         {
             "name": "meystack",
