@@ -56,7 +56,7 @@ class PluginController
      * 用户数据
      * @var array
      */
-    public $userData = null;
+    public $userInfo = null;
 
     /**
      * 控制器登录鉴权
@@ -98,8 +98,8 @@ class PluginController
         $this->action = request()->action(true);
         $this->controller = request()->controller(true);
         if($this->auth->isLogin()) {
-            $this->userId = $this->auth->userData['id']; 
-            $this->userData = $this->auth->userData; 
+            $this->userId = $this->auth->userInfo->id; 
+            $this->userInfo = $this->auth->userInfo; 
             if(in_array($this->action,$this->repeatLogin)) {
                 $this->redirect($this->JumpUrl);
             }
@@ -109,10 +109,12 @@ class PluginController
                 return $this->error('请登录后访问','/');
             }
         }
+        
         foreach (config('system.site') as $key => $value) {
             View::assign($key,$value);
         }
-        View::assign('user',$this->auth->userData);
+
+        View::assign('user',$this->auth->userInfo);
     }
 
         /**
